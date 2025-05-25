@@ -25,3 +25,6 @@ Thumbs.db
 
 # Local environment
 .env
+
+# Kotlin/IntelliJ build output
+out/

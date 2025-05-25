@@ -1,3 +1,9 @@
+import beginner.basicTypes
+import beginner.collections
+import beginner.helloWorld
+
 fun main(){
-    println("Hello Kotlin")
+    helloWorld()
+    basicTypes()
+    collections()
 }
