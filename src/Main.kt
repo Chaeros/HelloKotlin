@@ -1,3 +1,4 @@
+import beginner.Functions.functionsOperator
 import beginner.basicTypes
 import beginner.collections
 import beginner.controlFlow
@@ -8,4 +9,5 @@ fun main(){
     basicTypes()
     collections()
     controlFlow()
+    functionsOperator()
 }
