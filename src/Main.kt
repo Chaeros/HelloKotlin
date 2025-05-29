@@ -1,4 +1,5 @@
 import beginner.Functions.functionsOperator
+import beginner.Functions.lambdaOperator
 import beginner.basicTypes
 import beginner.collections
 import beginner.controlFlow
@@ -10,4 +11,5 @@ fun main(){
     collections()
     controlFlow()
     functionsOperator()
+    lambdaOperator()
 }
