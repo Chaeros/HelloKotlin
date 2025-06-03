@@ -6,8 +6,10 @@ import beginner.collections
 import beginner.controlFlow
 import beginner.helloWorld
 import beginner.nullSafety
+import intermediate.extensionFunction
 
 fun main(){
+    // beginner
     helloWorld()
     basicTypes()
     collections()
@@ -16,4 +18,7 @@ fun main(){
     lambdaOperator()
     classesOperator()
     nullSafety()
+
+    // intermediate
+    extensionFunction()
 }
