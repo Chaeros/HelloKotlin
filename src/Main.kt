@@ -5,6 +5,7 @@ import beginner.classesOperator
 import beginner.collections
 import beginner.controlFlow
 import beginner.helloWorld
+import beginner.nullSafety
 
 fun main(){
     helloWorld()
@@ -14,4 +15,5 @@ fun main(){
     functionsOperator()
     lambdaOperator()
     classesOperator()
+    nullSafety()
 }
