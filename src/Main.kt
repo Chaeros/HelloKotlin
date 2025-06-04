@@ -7,6 +7,7 @@ import beginner.controlFlow
 import beginner.helloWorld
 import beginner.nullSafety
 import intermediate.extensionFunction
+import intermediate.scopeFunction
 
 fun main(){
     // beginner
@@ -21,4 +22,5 @@ fun main(){
 
     // intermediate
     extensionFunction()
+    scopeFunction()
 }
