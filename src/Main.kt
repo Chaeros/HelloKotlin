@@ -7,6 +7,7 @@ import beginner.controlFlow
 import beginner.helloWorld
 import beginner.nullSafety
 import intermediate.extensionFunction
+import intermediate.lambdaExpressionsWithReceiver
 import intermediate.scopeFunction
 
 fun main(){
@@ -23,4 +24,5 @@ fun main(){
     // intermediate
     extensionFunction()
     scopeFunction()
+    lambdaExpressionsWithReceiver()
 }
