@@ -6,6 +6,7 @@ import beginner.collections
 import beginner.controlFlow
 import beginner.helloWorld
 import beginner.nullSafety
+import intermediate.classesAndInterfaces
 import intermediate.extensionFunction
 import intermediate.lambdaExpressionsWithReceiver
 import intermediate.scopeFunction
@@ -25,4 +26,5 @@ fun main(){
     extensionFunction()
     scopeFunction()
     lambdaExpressionsWithReceiver()
+    classesAndInterfaces()
 }
