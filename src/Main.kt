@@ -9,6 +9,7 @@ import beginner.nullSafety
 import intermediate.classesAndInterfaces
 import intermediate.extensionFunction
 import intermediate.lambdaExpressionsWithReceiver
+import intermediate.objects
 import intermediate.scopeFunction
 
 fun main(){
@@ -27,4 +28,5 @@ fun main(){
     scopeFunction()
     lambdaExpressionsWithReceiver()
     classesAndInterfaces()
+    objects()
 }
