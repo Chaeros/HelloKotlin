@@ -11,6 +11,7 @@ import intermediate.extensionFunction
 import intermediate.lambdaExpressionsWithReceiver
 import intermediate.objects
 import intermediate.openAndSpecialClasses
+import intermediate.properties
 import intermediate.scopeFunction
 
 fun main(){
@@ -31,4 +32,5 @@ fun main(){
     classesAndInterfaces()
     objects()
     openAndSpecialClasses()
+    properties()
 }
