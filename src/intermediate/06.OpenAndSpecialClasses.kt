@@ -45,6 +45,13 @@ fun openAndSpecialClasses() {
     printDeliveryStatus(status2)
     printDeliveryStatus(status3)
     printDeliveryStatus(status4)
+
+    // Exercise 2
+    val status5: Status = Status.Error(Status.Error.Problem.NETWORK)
+    val status6: Status = Status.OK(listOf("Data1", "Data2"))
+
+    handleStatus(status5)   // Network issue
+    handleStatus(status6)   // Data received: [Data1, Data2]
 }
 
 // Kotlin에서는 클래스가 기본적으로 final class이기 때문에 open을 쓰지 않으면 일반 클래스 상속이 불가능
@@ -174,6 +181,30 @@ fun printDeliveryStatus(status: DeliveryStatus) {
         }
         is DeliveryStatus.Canceled -> {
             println("The delivery was canceled due to: ${status.reason}.")
+        }
+    }
+}
+
+// Exercise 2
+sealed class Status {
+    data object Loading : Status()
+    data class Error(val problem: Problem) : Status() {
+        enum class Problem {
+            NETWORK, TIMEOUT, UNKNOWN
+        }
+    }
+
+    data class OK(val data: List<String>) : Status()
+}
+
+fun handleStatus(status: Status) {
+    when (status) {
+        is Status.Loading -> println("Loading...")
+        is Status.OK -> println("Data received: ${status.data}")
+        is Status.Error -> when (status.problem) {
+            Status.Error.Problem.NETWORK -> println("Network issue")
+            Status.Error.Problem.TIMEOUT -> println("Request timed out")
+            Status.Error.Problem.UNKNOWN -> println("Unknown error occurred")
         }
     }
 }
