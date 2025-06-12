@@ -1,11 +1,20 @@
 package intermediate
 
+import kotlin.reflect.KProperty
+
 fun properties() {
     val person = Person()
     // Person 클래스 내부에서 set 메서드 동작
     person.name = "kodee"
     // Person 클래스 내부에서 get 메서드 동작
     println(person.name)    // Kodee
+
+    val person2 = Person2("park","chaeros")
+    println(person2.fullName)   // park chaeros
+
+    val user = User("park","chaeros")
+    println(user.displayName)   // Computed and cached: park chaeros
+    println(user.displayName)   // Accessed from cache: park chaeros
 
     // Exercise 1
     val inventory = listOf(3,0,7,0,5)
@@ -44,6 +53,34 @@ class Person {
         set(value) {
             field = value.replaceFirstChar { firstChar -> firstChar.uppercase() }
         }
+}
+
+// Extension properties
+// 기존 클래스에 새로운 프로퍼티 추가 가능
+data class Person2(val firstName: String, val lastName: String)
+
+val Person2.fullName: String
+    get() = "$firstName $lastName"
+
+// Delegated properties
+// 일반 위임 프로퍼티
+class User(val firstName: String, val lastName: String) {
+    val displayName: String by CachedStringDelegate()
+}
+
+// 캐싱을 통해 만약 비용이 크게 들거나, 사용되지 않을 수 있는 클래스인 경우 최적화
+class CachedStringDelegate {
+    var cachedValue: String? = null
+
+    operator fun getValue(thisRef: User, property: Any?): String {
+        if (cachedValue == null) {
+            cachedValue = "${thisRef.firstName} ${thisRef.lastName}"
+            println("Computed and cached: $cachedValue")
+        } else {
+            println("Accessed from cache: $cachedValue")
+        }
+        return cachedValue ?: "Unknown"
+    }
 }
 
 // Exercise 1
