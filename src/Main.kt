@@ -9,6 +9,7 @@ import beginner.nullSafety
 import intermediate.classesAndInterfaces
 import intermediate.extensionFunction
 import intermediate.lambdaExpressionsWithReceiver
+import intermediate.nullSafety_intermediate
 import intermediate.objects
 import intermediate.openAndSpecialClasses
 import intermediate.properties
@@ -33,4 +34,5 @@ fun main(){
     objects()
     openAndSpecialClasses()
     properties()
+    nullSafety_intermediate()
 }
